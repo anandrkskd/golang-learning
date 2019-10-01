@@ -8,7 +8,14 @@ import (
 	"net/http"
 )
 
+var dockerComposeBinaryURL string = "https://github.com/docker/compose/releases/download/"
+
 func main() {
+
+	fmt.Println(new())
+}
+
+func new() string {
 	resp, err := http.Get("https://api.github.com/repos/docker/compose/releases/latest")
 	if err != nil {
 		// handle error
@@ -19,5 +26,7 @@ func main() {
 		panic(err)
 	}
 	num := dat["tag_name"]
-	fmt.Println(num)
+	//	fmt.Println(num)
+	dockerComposeBinaryURL = dockerComposeBinaryURL + fmt.Sprintf("%v", num) + "/docker-compose"
+	return string(dockerComposeBinaryURL)
 }
