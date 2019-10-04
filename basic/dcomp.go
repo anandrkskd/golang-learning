@@ -27,6 +27,6 @@ func new() string {
 	}
 	num := dat["tag_name"]
 	//	fmt.Println(num)
-	dockerComposeBinaryURL = dockerComposeBinaryURL + fmt.Sprintf("%v", num) + "/docker-compose"
+	dockerComposeBinaryURL = fmt.Sprintf(dockerComposeBinaryURL+"%v/docker-compose", num)
 	return string(dockerComposeBinaryURL)
 }
