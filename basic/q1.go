@@ -13,5 +13,5 @@ func main() {
 	cmd := exec.Command("ls", "/home/leo")
 	out, _ := cmd.Output()
 	a := strings.Split(string(out), "\n")
-	log.Print(a)
+	log.Fatal(a)
 }
