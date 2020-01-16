@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"fmt"
+	log "github.com/sirupsen/logrus"
 
 	"github.com/spf13/cobra"
 )
@@ -26,7 +26,8 @@ var versionCmd = &cobra.Command{
 	Short: "Print version",
 	Long:  `Print Meshery's version`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("version . . .")
+		log.Println("version . . .")
+		log.Println("version is dev")
 	},
 }
 
